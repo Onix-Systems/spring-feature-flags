@@ -1,0 +1,2 @@
+feature-flags.is-new-books-service-enabled: true
+management.endpoints.web.exposure.include: refresh
