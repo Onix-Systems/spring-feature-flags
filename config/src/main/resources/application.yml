@@ -1,0 +1,13 @@
+server.port: 8081
+spring:
+  application.name: config
+  jmx.default-domain: config
+  profiles.active: jdbc
+  datasource:
+    url: jdbc:mysql://localhost:3306/config
+    password: password
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud.config.server.jdbc:
+    order: 1
+    sql: SELECT `key`, `value` FROM `properties` where `application`=? and `profile`=? and `label`=?
